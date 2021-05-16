@@ -4,7 +4,7 @@ const getAll = () => boardRepo.getAllBoards();
 
 const getBoard = (id) => boardRepo.getBoard(id);
 
-const createBoard = (user) => boardRepo.createBoard(user);
+const createBoard = (board) => boardRepo.createBoard(board);
 
 const updateBoard = (id, data) => boardRepo.updateBoard(id, data);
 

@@ -6,8 +6,8 @@ router.route('/').get(async (req, res) => {
   res.status(boards ? 200 : 404).json(boards || []);
 });
 
-router.route('/:id').get(async (req, res) => {
-  const board = await boardService.getBoard(req.params.id);
+router.route('/:boardId').get(async (req, res) => {
+  const board = await boardService.getBoard(req.params.boardId);
   res.status(board ? 200 : 404).json(board || {})
 });
 
@@ -16,10 +16,10 @@ router.route('/').post(async (req, res) => {
   res.status(board ? 201 : 404).json(board || {})
 });
 
-router.route('/:id').put(async (req, res) => {
+router.route('/:boardId').put(async (req, res) => {
   const data = req.body;
-  const { id } = req.params;
-  const board = await boardService.updateBoard(id, data);
+  const { boardId } = req.params;
+  const board = await boardService.updateBoard(boardId, data);
   res.status(board ? 200 : 404).json(board || {})
 });
 router.route('/:id').delete(async (req, res) => {

@@ -23,7 +23,7 @@ router.route('/:id').put(async (req, res) => {
   const data = req.body;
   const { id } = req.params;
   const user = await usersService.updateUser(id, data);
-  console.log('sdsad',user);
+  // console.log('sdsad',user);
   res.status(user ? 200 : 404).json(user ? User.toResponse(user) : {})
 });
 router.route('/:id').delete(async (req, res) => {
