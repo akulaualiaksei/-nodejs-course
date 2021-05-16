@@ -1,14 +1,7 @@
 const uuid = require('uuid');
+const { db } = require('../db');
 
-const standartUser = {
-  id : '2f64aeba-f03e-48fa-814c-b45acdec1311',
-  name: 'standartName',
-  login: 'standartLogin',
-  password: '123'
-}
-
-const users = [];
-users.push(standartUser);
+const { users } = db;
 
 const getAll = async() => users;
 
