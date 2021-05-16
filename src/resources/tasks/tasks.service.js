@@ -12,6 +12,8 @@ const deleteTask = (id) => taskRepo.deleteTask(id);
 
 const unassignUserTask = (userId) => taskRepo.unassignUserTask(userId);
 
+const deleteTasksFromBoard = (boardId) => taskRepo.deleteBoardTasks(boardId);
+
 module.exports = {
   getAll,
   getTask,
@@ -19,4 +21,5 @@ module.exports = {
   updateTask,
   deleteTask,
   unassignUserTask,
+  deleteTasksFromBoard,
 }

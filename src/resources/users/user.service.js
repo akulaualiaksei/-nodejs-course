@@ -1,5 +1,5 @@
 const usersRepo = require('./user.memory.repository');
-// const tasksService = require('../tasks/tasks.service');
+const tasksService = require('../tasks/tasks.service');
 
 const getAll = () => usersRepo.getAll();
 
@@ -10,9 +10,11 @@ const createUser = (user) => usersRepo.createUser(user);
 const updateUser = (id, data) => usersRepo.updateUser(id, data);
 
 const deleteUser = (id) => {
-  const userIndex = usersRepo.deleteUser(id);
-  // tasksService.unassignUserTask(id);
-  return userIndex;
+  // const userIndex = usersRepo.deleteUser(id);
+  tasksService.unassignUserTask(id);
+  // console.log('delete user', userIndex);
+  // return userIndex;
+  return usersRepo.deleteUser(id);
 };
 
 module.exports = {

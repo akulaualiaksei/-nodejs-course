@@ -3,17 +3,14 @@ const { db } = require('../db');
 
 const { tasks } = db;
 
-const getAllTasks = async (boardId) => 
+const getAllTasks = async (boardId) =>
   // console.log('board id', boardId);
   // console.log('all db', db);
    tasks.filter(item => item.boardId === boardId)
 ;
 
-const getTask = async (boardId, taskId) => 
-  // console.log('from get task', boardId, taskId);
-  // console.log('from get task', tasks);
-
-   tasks.find(
+const getTask = async (boardId, taskId) =>
+  tasks.find(
   item => item.id === taskId && item.boardId === boardId
 )
 
@@ -25,7 +22,6 @@ const createTask = async (boardId, data) => {
     boardId,
   };
   tasks.push(newTask);
-  console.log('new task' , newTask)
   return newTask;
 }
 
@@ -50,11 +46,20 @@ const deleteTask = async (taskId) => {
 
 const unassignUserTask = async (userId) => {
   tasks.forEach((item, index) => {
-    if (item.userId === userId) tasks[index] = null;
+    if (item.userId === userId) tasks[index].userId = null;
     // console.log('item', item)
   });
   // console.log('new task', tasks);
 };
+
+const deleteBoardTasks = async (boardId) => {
+  for (let i = tasks.length - 1; i>=0; i-= 1) {
+    if (tasks[i].boardId === boardId) {
+      tasks.splice(i,1);
+    }
+  }
+  return tasks;
+}
 
 module.exports = {
   getAllTasks,
@@ -62,5 +67,6 @@ module.exports = {
   createTask,
   updateTask,
   deleteTask,
-  unassignUserTask
+  unassignUserTask,
+  deleteBoardTasks
 }

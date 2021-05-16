@@ -26,9 +26,11 @@ router.route('/:id').put(async (req, res) => {
   // console.log('sdsad',user);
   res.status(user ? 200 : 404).json(user ? User.toResponse(user) : {})
 });
+
 router.route('/:id').delete(async (req, res) => {
   const user = await usersService.deleteUser(req.params.id);
-  res.status(user ? 200 : 404).json({})
+  console.log('userdelete', user !== null ? 200 : 404);
+  res.status(user !== null ? 200 : 404).json({})
 });
 
 module.exports = router;

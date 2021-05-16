@@ -24,7 +24,8 @@ router.route('/:boardId').put(async (req, res) => {
 });
 router.route('/:id').delete(async (req, res) => {
   const board = await boardService.deleteBoard(req.params.id);
-  res.status(board ? 200 : 404).json({})
+  console.log('from board', board )
+  res.status(board !== null ? 200 : 404).json({})
 });
 
 module.exports = router;
