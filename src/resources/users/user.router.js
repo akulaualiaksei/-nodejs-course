@@ -9,8 +9,7 @@ router.route('/').get(async (req, res) => {
 
 router.route('/:id').get(async (req, res) => {
   const user = await usersService.getUser(req.params.id);
-  // console.log('as', req.params.id);
-  // console.log('aыs', user);
+
   res.status(user ? 200 : 404).json(user ? User.toResponse(user) : {})
 });
 
@@ -22,14 +21,15 @@ router.route('/').post(async (req, res) => {
 router.route('/:id').put(async (req, res) => {
   const data = req.body;
   const { id } = req.params;
+
   const user = await usersService.updateUser(id, data);
-  // console.log('sdsad',user);
+
   res.status(user ? 200 : 404).json(user ? User.toResponse(user) : {})
 });
 
 router.route('/:id').delete(async (req, res) => {
   const user = await usersService.deleteUser(req.params.id);
-  console.log('userdelete', user !== null ? 200 : 404);
+
   res.status(user !== null ? 200 : 404).json({})
 });
 

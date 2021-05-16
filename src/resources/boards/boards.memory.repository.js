@@ -20,8 +20,6 @@ const createBoard = async ({ title, columns }) => {
     columns: columnsData || []
   }
   boards.push(boardData);
-  // console.log('all boards', boards);
-  // console.log('all boards', db);
   return boardData;
 }
 

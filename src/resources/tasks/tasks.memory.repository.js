@@ -4,8 +4,6 @@ const { db } = require('../db');
 const { tasks } = db;
 
 const getAllTasks = async (boardId) =>
-  // console.log('board id', boardId);
-  // console.log('all db', db);
    tasks.filter(item => item.boardId === boardId)
 ;
 
@@ -47,9 +45,7 @@ const deleteTask = async (taskId) => {
 const unassignUserTask = async (userId) => {
   tasks.forEach((item, index) => {
     if (item.userId === userId) tasks[index].userId = null;
-    // console.log('item', item)
   });
-  // console.log('new task', tasks);
 };
 
 const deleteBoardTasks = async (boardId) => {
