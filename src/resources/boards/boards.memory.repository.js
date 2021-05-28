@@ -66,7 +66,7 @@ const createBoard = async ({ title, columns }) => {
 };
 
 /**
- * update one board
+ * update one board by id
  * @async
  * @function updateBoard
  * @param {Board} data board obj
@@ -87,7 +87,7 @@ const updateBoard = async (id, data) => {
 };
 
 /**
- * delete one board
+ * delete one board by id
  * @async
  * @function deleteBoard
  * @param {string} id - board id

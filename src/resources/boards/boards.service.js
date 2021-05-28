@@ -21,7 +21,7 @@ const taskService = require('../tasks/tasks.service');
  */
 
 /**
- * call the repository method to return all the boards
+ * call the repository method to get all the boards
  * @async
  * @function getAll
  * @returns {Promise<Board[]>} return array of all boards
@@ -29,7 +29,7 @@ const taskService = require('../tasks/tasks.service');
 const getAll = () => boardRepo.getAllBoards();
 
 /**
- * get one board by id
+ * call the repository method to get one board by id
  * @async
  * @function getBoard
  * @param {string} id - board id
@@ -39,7 +39,7 @@ const getAll = () => boardRepo.getAllBoards();
 const getBoard = (id) => boardRepo.getBoard(id);
 
 /**
- * create one board
+ * call the repository method to create one board
  * @async
  * @function createBoard
  * @param {Board} board board object
@@ -49,7 +49,7 @@ const getBoard = (id) => boardRepo.getBoard(id);
 const createBoard = (board) => boardRepo.createBoard(board);
 
 /**
- * update one board
+ * call the repository method to update one board
  * @async
  * @function updateBoard
  * @param {Board} data - board obj
@@ -60,7 +60,7 @@ const createBoard = (board) => boardRepo.createBoard(board);
 const updateBoard = (id, data) => boardRepo.updateBoard(id, data);
 
 /**
- * delete one board
+ * call the repository method to delete one board
  * @async
  * @function deleteBoard
  * @param {string} id - board id
