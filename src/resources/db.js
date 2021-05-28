@@ -26,10 +26,20 @@
  */
 
 /**
+ * Class representing a user
+ * @typedef {Object} User
+ * @property {string} id - User id from uuid.v4()
+ * @property {string} name - User name
+ * @property {string} login - User login
+ * @property {string} password - User password
+ */
+
+/**
  * db object
  * @typedef {Object} db
  * @property {Board[]} boards
  * @property {Task[]} tasks
+ * @property {User[]} users
  */
 
 /**
