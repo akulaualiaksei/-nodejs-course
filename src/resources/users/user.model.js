@@ -38,7 +38,7 @@ class User {
   /**
    * @method toResponse
    * @param {User} user user instance
-   * @returns {{id: string, name: string, login: string}} user instance without password
+   * @returns {{User.id: string, User.name: string, User.login: string}} user instance without password
    * @static
    */
   static toResponse(user) {

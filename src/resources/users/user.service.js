@@ -63,9 +63,7 @@ const updateUser = (id, data) => usersRepo.updateUser(id, data);
  */
 
 const deleteUser = (id) => {
-  // const userIndex = usersRepo.deleteUser(id);
   tasksService.unassignUserTask(id);
-  // return userIndex;
   return usersRepo.deleteUser(id);
 };
 

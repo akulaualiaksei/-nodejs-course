@@ -15,6 +15,13 @@ const Column = require('./column.model');
  */
 
 class Board {
+  /**
+   * Class representing a board
+   * @param {Object} Board
+   * @param {string} Board.id - Board id from uuid.v4()
+   * @param {string} Board.title - Board title
+   * @param {Column[]} Board.columns - Board columns array
+   */
   constructor({
     id = uuid(),
     title = 'board title',
