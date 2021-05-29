@@ -6,7 +6,8 @@
 const uuid = require('uuid');
 const { db } = require('../db');
 
-const { tasks } = db;
+// const { tasks } = db;
+const tasks = [];
 
 /**
  * Class representing a task
