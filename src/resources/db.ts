@@ -1,5 +1,5 @@
 import { Board } from './boards/boards.model';
-import { User } from './users/user.model';
+import { User } from './users/users.model';
 import { Task } from './tasks/tasks.model';
 
 const db : {

@@ -1,8 +1,6 @@
-import * as usersRepo from './user.memory.repository';
-// import tasksService from '../tasks/tasks.service';
-import { IUser } from './user.model';
-
-const tasksService = require('../tasks/tasks.service');
+import * as usersRepo from './users.memory.repository';
+import * as tasksService from '../tasks/tasks.service';
+import { IUser } from './users.model';
 
 const getAll = () => usersRepo.getAll();
 

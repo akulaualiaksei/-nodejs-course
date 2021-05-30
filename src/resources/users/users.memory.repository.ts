@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { User, IUser } from './user.model';
+import { User, IUser } from './users.model';
 
 import db from '../db';
 

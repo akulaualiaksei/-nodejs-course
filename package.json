@@ -5,17 +5,17 @@
     "type": "git",
     "url": ""
   },
-  "type": "module",
+  "type": "commonjs",
   "description": "REST service starter for RS School",
-  "main": "src/server.js",
+  "main": "src/server.ts",
   "scripts": {
-    "start": "nodemon src/server.js",
+    "start": "nodemon build/server.js",
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
     "doc": "jsdoc -c jsdoc.json",
     "build": "tsc --project tsconfig.json",
-    "dev": "ts-node src/server.ts"
+    "dev": "nodemon --watch \"src/**/*.ts\" --ignore \"node_modules\" --exec \"ts-node src/server.ts\""
   },
   "keywords": [
     "rs",

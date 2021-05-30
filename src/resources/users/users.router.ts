@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { User } from './user.model';
-import * as usersService from './user.service';
+import { User } from './users.model';
+import * as usersService from './users.service';
 
 const router = Router();
 
@@ -31,9 +31,11 @@ router.route('/:id').put(async (req:Request, res:Response) => {
 });
 
 router.route('/:id').delete(async (req:Request, res:Response) => {
-  const user = await usersService.deleteUser(req.params['id'] || '');
-
-  res.status(user ? 200 : 404).json(user ? { message: 'success' } : { message: 'not found' });
+  const { id } = req.params;
+  if (id) {
+    const user = await usersService.deleteUser(id);
+    res.status(user ? 200 : 204).json();
+  }
 });
 
 export default router;
