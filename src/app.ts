@@ -8,7 +8,7 @@ import tasksRouter from './resources/tasks/tasks.router';
 import logger from './middleware/logger.middleware';
 import unhandledPromiseRejection from './middleware/unhandledPromiseRejection.middleware';
 import uncaughtException from './middleware/uncaughtException.middleware';
-import handleErrorsMiddleware from './middleware/handleErrorsMiddleware';
+import handleErrorsMiddleware from './middleware/handleErrors.middleware';
 
 const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
