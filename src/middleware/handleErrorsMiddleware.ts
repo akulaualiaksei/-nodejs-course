@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   Request,
   Response,
@@ -12,7 +11,7 @@ const handleErrorsMiddleware = (
   res: Response,
   _next: NextFunction,
 ): void => {
-  logError(error.message, error);
+  logError(`handleErrorsMiddleware message:${error.message}`, error);
   res.status(500).json({ message: 'Internal server error' });
 };
 
