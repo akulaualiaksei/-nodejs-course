@@ -26,5 +26,5 @@ export const logDebug = (message: string, messageObj: object): void => {
 };
 
 export const logError = (message: string, messageObj: object): void => {
-  winstonLogger.log('error', message, messageObj);
+  winstonLogger.error(message, messageObj);
 };
